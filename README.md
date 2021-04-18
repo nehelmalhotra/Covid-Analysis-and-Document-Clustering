@@ -10,13 +10,13 @@ In the second part, we will try and cluster documents into informative clusters 
 
 - [Synopsis](#synopsis)
 - [Part 1 - Covid Cases Analysis](#covid-cases-analysis)
-- [Dataset](#dataset-)
-  - [Summary of the Dataset](#summary-of-the-dataset-)
-  - [Charts and Figures 2](#charts-and-figures-)
-- [Part 2 - Document Clustering](#covid-document-clustering-)
-- [Dataset 2](#dataset2-)
-  - [Summary of the Dataset 2](#summary-of-the-dataset2-)
-  - [Charts and Figures 2](#charts-and-figures2-)
+- [Dataset](#dataset)
+  - [Summary of the Dataset](#summary-of-the-dataset)
+  - [Charts and Figures](#charts-and-figures)
+- [Part 2 - Document Clustering](#covid-document-clustering)
+- [Dataset](#dataset2)
+  - [Summary of the Dataset](#summary-of-the-dataset2)
+  - [Charts and Figures](#charts-and-figures2)
 - [Conclusion](#conclusion-)
 
 # Synopsis <a name="synopsis"></a>
@@ -27,41 +27,39 @@ The purpose of this project is to visualize the spread of the coronavirus and th
 
 # Part 1 - Covid Cases Analysis <a name="covid-cases-analysis"></a>
 
-# Dataset
+# Dataset <a name="dataset"></a>
 
 The datasets used for this part of the project can be found on Kaggle: 
 
 https://www.kaggle.com/sudalairajkumar/novel-corona-virus-2019-dataset
 
 
-## Summary of the Dataset 
+## Summary of the Dataset <a name="summary-of-the-dataset"></a>
 
  - This dataset contains daily reported cases for different countries and provinces. 
  - The dataset is in a very useable format, except there are some missing values for Province. Since we are trying to visualize the data country-wise this is not a problem.
  - The dataset also contains country names are that slightly modified than what Plotly expects to see, for example: 'Mainland China'. While not all the names can be changed,        Mainland China is converted to China for visulization.
 
-## Charts and Figures
+## Charts and Figures <a name="charts-and-figures"></a>
 
  - From the plot below, it can be seen how the 1 case in China started to spread across Europe and America and the eventual outbreak in countries like the US and UK.
 
   ![Covid Spread](images/covid_spread.gif)
 
-# Part 2 - Document Clustering
 
-# Dataset 2
+# Part 2 - Document Clustering <a name="covid-document-clustering"></a>
+
+
+# Dataset <a name="dataset2"></a>
 The datasets used for this part of the project can be found on Kaggle:
 
 https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge
 
-## Summary of the Dataset 2
+## Summary of the Dataset <a name="summary-of-the-dataset2"></a>
 
- - This dataset contains daily reported cases for different countries and provinces. 
- - The dataset is in a very useable format, except there are some missing values for Province. Since we are trying to visualize the data country-wise this is not a problem.
- - The dataset also contains country names are that slightly modified than what Plotly expects to see, for example: 'Mainland China'. While not all the names can be changed,        Mainland China is converted to China for visulization.
 
-Will tell us about the Skewness of the data and where does the data incline towards?
 
-## Charts and Figures 2
+## Charts and Figures <a name="charts-and-figures2"></a>
 
 ![Word Cloud](images/Word_cloud_covid.png)
 
