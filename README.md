@@ -12,49 +12,56 @@ In the second part, we will try and cluster documents into informative clusters 
 - [Part 1 - Covid Cases Analysis](#covid-cases-analysis-)
 - [Dataset](#dataset-)
   - [Summary of the Dataset](#summary-of-the-dataset-)
-  - [Charts and Figures](#charts-and-figures-)
+  - [Charts and Figures 2](#charts-and-figures-)
 - [Part 2 - Document Clustering](#covid-document-clustering-)
-- [Dataset](#dataset2-)
-  - [Summary of the Dataset](#summary-of-the-dataset2-)
-  - [Charts and Figures](#charts-and-figures2-)
+- [Dataset 2](#dataset2-)
+  - [Summary of the Dataset 2](#summary-of-the-dataset2-)
+  - [Charts and Figures 2](#charts-and-figures2-)
 - [Conclusion](#conclusion-)
 
 # Synopsis
 
-Since the early 2010s, major banks have used anomaly detection – an AI technique for identifying deviations from a norm – for automating fraud, cybersecurity, and anti-money laundering processes. According to [AI opportunity Landscape research](https://emerj.com/ai-opportunity-landscape-finserv/) by the [Emerj](https://emerj.com/), *approximately 26% of the venture funding raised for AI in the banking industry is for fraud and cybersecurity applications, more than any other use-case category.*
+Coivd-19 has changed how we live our lives and conduct day to day activies for the forseeable future. What started as a single case in the town of Wuhan, China has grown to become a global pandemic. The best we can do to contribute is to stay indoors, wear a mask and sanitize our hands regularly. 
+
+The purpose of this project is to visualize the spread of the coronavirus and then use clustering and LDA to conduct topic modelling on over 400,000 scholary articles that have been published about Covid. These articles are a important source of information for a lot of people and having the right article come up at the right time is critical. 
 
 # Part 1 - Covid Cases Analysis
 
-![Covid Spread](images/covid_spread.gif)
 # Dataset
 
-The datasets contains transactions made by credit cards in September 2013 by European cardholders.
-This dataset presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. The dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions
+The datasets used for this part of the project can be found on Kaggle: 
 
-It contains only numerical input variables which are the result of a PCA transformation. Features V1, V2, … V28 are the principal components obtained with PCA, the only features which have not been transformed with PCA are 'Time' and 'Amount'. Feature 'Time' contains the seconds elapsed between each transaction and the first transaction in the dataset. The feature 'Amount' is the transaction Amount, this feature can be used for example-dependant cost-sensitive learning. Feature 'Class' is the response variable and it takes value 1 in case of fraud and 0 otherwise.
+https://www.kaggle.com/sudalairajkumar/novel-corona-virus-2019-dataset
 
-## Summary of the Dataset 📃
 
- - Transaction amounts are relatively small, averaging at **USD 88.349619**.
- - No `Null` values.
- - **99.83%** of transactions were **non-fraud** and **0.17%** of transactions were fraud, making the data Imbalanced.
- - The description of the data says all the features, except time and amount went through **PCA Transformation** (Dimensionality Reduction technique). Keeping in mind that in order to implement PCA Transformation, features are needed to be scaled so I will be assuming all the ***V*** features have been scaled.
+## Summary of the Dataset 
 
-## Common mistakes while using Imbalanced Dataset
-
-- Testing on oversampled/undersampled dataset.
-- Implementing cross-validation after oversampling/undersampling the training data. It needs to be **during** the fact.
-- Using accuracy score as the metric. Use f1-score, precision, recall and confusion matrix instead.
+ - This dataset contains daily reported cases for different countries and provinces. 
+ - The dataset is in a very useable format, except there are some missing values for Province. Since we are trying to visualize the data country-wise this is not a problem.
+ - The dataset also contains country names are that slightly modified than what Plotly expects to see, for example: 'Mainland China'. While not all the names can be changed,        Mainland China is converted to China for visulization.
 
 ## Charts and Figures
 
-![Word Cloud](images/Word_cloud_covid.png)
+ - From the plot below, it can be seen how the 1 case in China started to spread across Europe and America and the eventual outbreak in countries like the US and UK.
 
-### Distribution Plot of Amount and Time
+  ![Covid Spread](images/covid_spread.gif)
+
+# Part 2 - Document Clustering
+
+# Dataset 2
+The datasets used for this part of the project can be found on Kaggle:
+
+https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge
+
+## Summary of the Dataset 2
+
+ - This dataset contains daily reported cases for different countries and provinces. 
+ - The dataset is in a very useable format, except there are some missing values for Province. Since we are trying to visualize the data country-wise this is not a problem.
+ - The dataset also contains country names are that slightly modified than what Plotly expects to see, for example: 'Mainland China'. While not all the names can be changed,        Mainland China is converted to China for visulization.
 
 Will tell us about the Skewness of the data and where does the data incline towards?
 
-![Distribution Chart](img/distribution.svg)
+## Charts and Figures 2
 
-### Distribution Plot of each feature
-Plotting histograms with their distribution of each feature (Time + V1-V27) to see the difference between Fraudulent and Non-Fraudulent transactions.
+![Word Cloud](images/Word_cloud_covid.png)
+
