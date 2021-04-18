@@ -8,8 +8,8 @@ In the second part, we will try and cluster documents into informative clusters 
 
 # Table of Contents<!-- omit in toc -->
 
-- [Synopsis](#synopsis-)
-- [Part 1 - Covid Cases Analysis](#covid-cases-analysis-)
+- [Synopsis](#synopsis)
+- [Part 1 - Covid Cases Analysis](#covid-cases-analysis)
 - [Dataset](#dataset-)
   - [Summary of the Dataset](#summary-of-the-dataset-)
   - [Charts and Figures 2](#charts-and-figures-)
@@ -19,13 +19,13 @@ In the second part, we will try and cluster documents into informative clusters 
   - [Charts and Figures 2](#charts-and-figures2-)
 - [Conclusion](#conclusion-)
 
-# Synopsis
+# Synopsis <a name="synopsis"></a>
 
 Coivd-19 has changed how we live our lives and conduct day to day activies for the forseeable future. What started as a single case in the town of Wuhan, China has grown to become a global pandemic. The best we can do to contribute is to stay indoors, wear a mask and sanitize our hands regularly. 
 
 The purpose of this project is to visualize the spread of the coronavirus and then use clustering and LDA to conduct topic modelling on over 400,000 scholary articles that have been published about Covid. These articles are a important source of information for a lot of people and having the right article come up at the right time is critical. 
 
-# Part 1 - Covid Cases Analysis
+# Part 1 - Covid Cases Analysis <a name="covid-cases-analysis"></a>
 
 # Dataset
 
