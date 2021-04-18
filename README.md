@@ -16,7 +16,10 @@ In the second part, we will try and cluster documents into informative clusters 
 - [Part 2 - Document Clustering](#covid-document-clustering)
 - [Dataset](#dataset2)
   - [Summary of the Dataset](#summary-of-the-dataset2)
-  - [Charts and Figures](#charts-and-figures2)
+  - [Exploratory Analysis](#eda)
+  - [Dimensionality reduction and clustering](#clustering)
+  - [LDA](#classification-lda)
+  - [Supervised Learning Model](#supervised-learning)
 - [Conclusion](#conclusion-)
 
 # Synopsis <a name="synopsis"></a>
@@ -55,11 +58,57 @@ The datasets used for this part of the project can be found on Kaggle:
 
 https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge
 
+For document clustering, only the abstract and title will be used due to computational power and time. However using the full text and more data will result in better clustering.
+
 ## Summary of the Dataset <a name="summary-of-the-dataset2"></a>
 
+ - The metadata.csv file contains information on different scholary articles published on COVID-19. The columns used for this project are:
+      - Title, Abstract and Data Published
+  - The data also contains missing values and duplicates which are removed as part of the pre-processing and cleaning
 
+## Exploratory Analysis <a name="eda"></a>
 
-## Charts and Figures <a name="charts-and-figures2"></a>
+- Majority of the artices are published on the new year's date, however to get a better sense of how the number of articles changed over time, the following trend is observed:
 
-![Word Cloud](images/Word_cloud_covid.png)
+![New Articles Published](images/Articles_published.png)
 
+- The average length of abstracts is around 2,000 words but there are several outliers where the word count is over 10,000 words.
+
+![Abstract word count](images/Abstract_length.PNG)
+
+ - Of the 50,000 subset, most of the articles are in Enlgish. The distribution of artices in other languages is as follows:
+ 
+  ![Language distribution](images/Language_distribution.png)
+
+- Words like covid, pandemic and virus are removed from the abstract in order to get unique words for different articles to assist in clustering. The following the the word cloud for the articles:
+
+  ![Word Cloud](images/Word_cloud_covid.png)
+
+## Dimensionality reduction and clustering <a name="clustering"></a>
+
+- In order to cluster the data using NLP, the data is first cleaned to remove any stopwords, punctuations and lower cased for text matching. Futhermore, the data is lemmetized. Lemmatization is the process of grouping together the different inflected forms of a word so they can be analysed as a single item.
+
+- The data is then vectorized using Tf-idf, which counts the frequency of a words in a given document and then penalizes the word based on its frequency is the overall corpus. 
+
+- PCA and SVD are used for dimensionality reduction, keeping only the features that explains 95% of the variance in the data. The first two features are plotted and as expected no apparant clusters can be seen. This is because of the high dimensionality of the data.
+
+![SVD](images/SVD_components.png)
+
+- k-Means clustering is conducted, where k=15 is found as the optimal number of clusters based on the elbow plot.
+- In order to visualize this, the data is trasformed using t-SNE which helps in visualizing high dimensional data.
+
+![k-Means](images/clustered_svd.png)
+
+## LDA - Topic Modelling <a name="lda"></a>
+- LDA is used to model the data into 15 topics. 
+
+| Topics  |  |
+| ------------- | ------------- |
+| Risks  | Vaccine development  |
+| Antibody Testing  | Drugs  |
+| Healthcare  | Immune Response  |
+| Existing conditions  | Respiratory disease  |
+| Country analysis  | Online Learning  |
+| Parenting and symptoms  | Distance Measures  |
+| Testing Methods  | Mental Health |
+| High risk groups  |   |
