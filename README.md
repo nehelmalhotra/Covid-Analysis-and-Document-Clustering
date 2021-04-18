@@ -18,9 +18,8 @@ In the second part, we will try and cluster documents into informative clusters 
   - [Summary of the Dataset](#summary-of-the-dataset2)
   - [Exploratory Analysis](#eda)
   - [Dimensionality reduction and clustering](#clustering)
-  - [LDA](#classification-lda)
-  - [Supervised Learning Model](#supervised-learning)
-- [Conclusion](#conclusion-)
+  - [LDA](#lda)
+- [Conclusion](#conclusion)
 
 # Synopsis <a name="synopsis"></a>
 
@@ -112,3 +111,11 @@ For document clustering, only the abstract and title will be used due to computa
 | Parenting and symptoms  | Distance Measures  |
 | Testing Methods  | Mental Health |
 | High risk groups  |   |
+
+
+## Conclusion <a name="conclusion"></a>
+
+Supervised learning algorithms can then be trained on pre-clustered data to predict the clusters of new and unseen articles. This is a powerful tool and is currently being used by companies like Google for news clustering.
+
+When training a logsitic regression model on the data and 15 clusters, an accuracy score of 0.97 was obtained for the train data and 0.94 for the test/validation data.
+
